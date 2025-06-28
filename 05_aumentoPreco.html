@@ -8,7 +8,7 @@
         //- acima de 1500: aumento de 5 %
     
     //Entrada
-    const preco = prompt (`Qual o preço do produto?`);
+    const preco =Number (prompt (`Qual o preço do produto?`));
 
     //PROCESSAMENTO
      
@@ -22,6 +22,9 @@
     const novoPreco = preco + aumento;
     
     //Saída
-    (preco <= 280 ) ? alert(`terá um aumemto de 20%, resultando em`)
+    alert (`preço original: R$ ${preco.toFixed(2)}\n` +
+            `Percentual de aumento: ${percentual * 100}%\n` +
+            `valor do aumento: R$ ${aumento.toFixed(2)}\n` + 
+            `Novo Preço: R$ ${novoPreco.toFixed(2)}`);
 
 </script>
