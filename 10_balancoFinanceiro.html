@@ -10,11 +10,19 @@
     // Verifique se o usuário ganha mais do que recebe e apresente em tela, indicando quanto que sobrou após o pagamento das contas ou quanto que faltou para poder pagar todas as contas previstas.
 
     //Entrada
+    const agua = Math.ceil(Number (prompt(`quanto você tem que pagar da conta de água em um mês?`).replace("," , ".")));
+    const eletrica = Math.ceil(Number (prompt(`Quanto você tem que pagar de energia elétrica em um mês?`).replace("," , ".")));
+    const telefone = Math.ceil(Number (prompt(`Quanto você gasta na conta de telefone em um mês?`).replace("," , ".")));
+    const mercado = Math.ceil(Number (prompt(`Quanto você gasta de supermercado em um mês?`).replace("," , ".")));
+    const salario = Math.ceil(Number (prompt(`Quanto você ganha de salário?`).replace("," , ".")));
+    const trabalho = prompt (`Você trabalha atuando em qual área?`);
 
+        // Processamento
+    const totalDespesas = agua + eletrica + telefone + mercado;
+    const saldo = salario - totalDespesas;
 
-    //Processamento
-
-    
-    //Saída
-    
+    // Saída
+    (saldo >= 0)
+    ? alert(`Você trabalha como ${trabalho}, recebe R$ ${salario}, e gasta R$ ${totalDespesas}. Sobra R$ ${saldo} após pagar todas as contas.`)
+    : alert(`Você trabalha como ${trabalho}, recebe R$ ${salario}, mas gasta R$ ${totalDespesas}. Está faltando R$ ${Math.abs(saldo)} para pagar todas as contas.`);
 </script>

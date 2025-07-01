@@ -10,11 +10,18 @@
     // Entre 5.9 e zero            E
 
     //Entrada
-
+    const nota = Number(prompt(`qual a nota?(escreva usando 1 casa decimal. Ex: 1.2  4.0  6.5  9.0)`));
 
     //Processamento
 
     
-    //Saída
+    //Saída 
+    isNaN(nota) || nota >= 10.1 ? alert (`Digite uma nota válida!!`) :
+    (nota >= 9.0 && nota <= 10.0) ? alert (`Seu conceito é "A"!`) : 
+    (nota >= 8.0 && nota <= 8.9)  ? alert (`Seu conceito é "B"!`) : 
+    (nota >= 7.0 && nota <= 7.9)  ? alert (`Seu conceito é "C"!`) : 
+    (nota >= 6.0 && nota <= 6.9)  ? alert (`Seu conceito é "D"!`) : 
+    (nota >= 0.0 && nota <= 5.9)  ? alert (`Seu conceito é "E"!`) : 
+                                    alert (`Número de nota inválido, escreva um número entre 0.0 e 10.0`)
 
 </script>

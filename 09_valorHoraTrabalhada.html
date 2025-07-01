@@ -8,11 +8,19 @@
     // Apresente o salário final recebido pelo funcionário semanalmente e o preço de cada hora trabalhada.
 
     //Entrada
-
+    const hrsTrab = Number(prompt(`quantas horas você trabalha semanalmente?(escreva somente números)`));
+    const pagHr = Number(prompt(`quanto você recebe por horas trabalhadas?`));
 
     //Processamento
-
+    const horas45 = hrsTrab * pagHr;
+    const horas60 = (horas45 * 60) / 100;
+    const hrMaior60 = (horas45 * 60) / 100;
+    
+    
     
     //Saída
-
+    (hrsTrab >= 1 && hrsTrab >= 45 ) ? alert (`Você receberá R$ ${horas45}, você receberá R$ ${hrs45} por hora trabalhada`) : 
+    (hrsTrab >= 45 && hrsTrab >= 60) ? alert (`Você receberá ${horas60}`) : 
+    (hrsTrab >= 61) ? alert (`Você receberá ${hrMaior60}`) : 
+    alert(`dados invválidos`);
 </script>
