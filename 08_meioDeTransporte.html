@@ -1,26 +1,25 @@
 <meta charset="UTF-8">
 <script>
-    //Problema: Idade Humana
-    //É sabido que os caẽs amadurecem mais rapidamente do que os seres humanos (na verdade, alguns seres humanos parecem nunca amadurecer).
-    // Calcule a idade do seu cão, baseada nos seguintes fatores:
-    // - cães de porte pequeno: fator 5
-    // - cães de porte médio: fator 6
-    // - cães grandes: fator 7.
+    //Problema: Meio de transporte mais barato
+    // Faça um script que peça para o usuário informar o preço do litro do combustível e a quantidade de litros utilizados para se deslocar para o trabalho diariamente.
+    // Peça também ao programa para o usuário informar o preço do transporte público que deverá pagar para se deslocar ao trabalho diariamente.
+    // Verifique qual é o meio de transporte mais barato e apresente em tela, especificando quanto custará para ir e voltar do trabalho diariamente.
 
     //Entrada
-    const doage = Number(prompt(`Há quantos anos você tem o seu cachorro?`));
-    const porte = prompt(`qual o porte do seu cachorro?(pequeno, médio, grande)`).trim().toLowerCase();
+    const precoGaso = Number(prompt(`Qual o preço do litro de gasolina?`).replace(",", "."));
+    const litros = Number(prompt(`Quantos litros de gasolina você gata para ir ao trabalho todo dia?`).replace(",", "."));
+    const publico = Number(prompt(`Qual o preço do transporte público para ir ao seu trabalho?`).replace(",", "."));
 
     //Processamento
-    const mini = doage * 5;
-    const median = doage * 6;
-    const giga = doage * 7;
-
+    const precoCarro = precoGaso * litros * 2;
+    const precoPubli = publico * 2;
+    
     //Saída
-    isNaN(doage) || doage <= 0 ? alert(`digite uma idade válida`) :
-    (porte === "pequeno") ? alert(`Em estimativa, seu cachorro tem ${mini} anos de idade humana.`) :
-    (porte === "médio")   ? alert(`Em estimativa, seu cachorro tem ${median} anos de idade humana.`) :
-    (porte === "grande")  ? alert(`Em estimativa, seu cachorro tem ${giga} anos de idade humana.`) :
-                            alert(`Digite um porte válido: pequeno, médio ou grande.`);
-
+    (isNaN(precoGaso) || precoGaso < 0 || 
+     isNaN(litros) || litros < 0 || 
+     isNaN(publico) || publico < 0) ? alert(`Valor inválido. Por favor, insira apenas números positivos.`) :
+    (precoCarro < precoPubli) ? alert (`Indo de carro para o trabalho você gastará menos, gastando no total R$ ${precoCarro.toFixed(2)}`) : 
+    (precoPubli < precoCarro) ? alert (`Indo de transporte publico você gastará menos, gastando no total R$ ${precoPubli.toFixed(2)}`) : 
+                                alert (`os dois meios de transporte gastarão o mesmo: R$ ${precoCarro.toFixed(2)}`);
+    
 </script>
